@@ -28,26 +28,33 @@ map.loadImage('https://mvaccess.github.io/cannabismap/pot.png', function(error, 
 if (error) throw error;
 map.addImage('cat', image);
 map.addLayer({
-"id": "points",
-"type": "symbol",
-"source": {
-"type": "geojson",
-"data": 'https://mvaccess.github.io/cannabismap/storefront.geojson'
-},
-"layout": {
-"icon-image": "cat",
-"icon-size": 0.25
-}
-});
-map.addLayer({
-'id': 'maine',
-'type': 'fill',
-'source': {
-'type': 'geojson',
-'data': 'https://mvaccess.github.io/cannabismap/city.geojson'
-});
+	"id": "points",
+	"type": "symbol",
+	"source": {
+		"type": "geojson",
+		"data": 'https://mvaccess.github.io/cannabismap/storefront.geojson'
+		},
+	"layout": {
+		"icon-image": "cat",
+		"icon-size": 0.25
+		}
 });
 
+map.addLayer({
+	'id': 'maine',
+	'type': 'fill',
+	'source': {
+		'type': 'geojson',
+		'data': 'https://mvaccess.github.io/cannabismap/city.geojson',
+	}
+	'layout': {},
+	'paint': {
+	'fill-color': '#088',
+	'fill-opacity': 0.8
+	}
+});
+});
+});
 </script>
  
 </body>
