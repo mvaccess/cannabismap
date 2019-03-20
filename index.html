@@ -39,6 +39,13 @@ map.addLayer({
 "icon-size": 0.25
 }
 });
+map.addLayer({
+'id': 'maine',
+'type': 'fill',
+'source': {
+'type': 'geojson',
+'data': 'https://mvaccess.github.io/cannabismap/city.geojson'
+});
 });
 });
 
