@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='utf-8' />
-<title>Display a map</title>
+<title>Mountain View Cannabis Buffer Zone Map</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
@@ -22,6 +22,35 @@ style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
 center: [-122.0839, 37.3861], // starting position [lng, lat]
 zoom: 13 // starting zoom
 });
+
+map.on('load', function() {
+map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', function(error, image) {
+if (error) throw error;
+map.addImage('cat', image);
+map.addLayer({
+"id": "points",
+"type": "symbol",
+"source": {
+"type": "geojson",
+"data": {
+"type": "FeatureCollection",
+"features": [{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [-122.0839, 37.3861]
+}
+}]
+}
+},
+"layout": {
+"icon-image": "cat",
+"icon-size": 0.25
+}
+});
+});
+});
+
 </script>
  
 </body>
