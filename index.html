@@ -20,11 +20,11 @@ var map = new mapboxgl.Map({
 container: 'map', // container id
 style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
 center: [-122.0839, 37.3861], // starting position [lng, lat]
-zoom: 13 // starting zoom
+zoom: 12 // starting zoom
 });
 
 map.on('load', function() {
-map.loadImage('https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png', function(error, image) {
+map.loadImage('https://mvaccess.github.io/cannabismap/pot.svg', function(error, image) {
 if (error) throw error;
 map.addImage('cat', image);
 map.addLayer({
