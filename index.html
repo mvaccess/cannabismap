@@ -33,7 +33,7 @@ map.on('load', function () {
         'type': 'fill',
         'source': {
             'type': 'geojson',
-            'data': 'https://mvaccess.github.io/cannabismap/export.geojson'
+            'data': turf.buffer('https://mvaccess.github.io/cannabismap/export.geojson', 500, {units: 'miles'});
         },
         'layout': {},
         'paint': {
