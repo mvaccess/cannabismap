@@ -11,9 +11,6 @@
     #map { position:absolute; top:0; bottom:0; width:100%; }
   </style>
   <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-<script>
-    var bbox = turf.bbox(features);
-</script>
 </head>
 <body>
 
@@ -33,7 +30,7 @@ map.on('load', function () {
         'type': 'fill',
         'source': {
             'type': 'geojson',
-            'data': 'turf.buffer('https://mvaccess.github.io/cannabismap/export.geojson', 500, {units: 'miles'});'
+            'data': 'https://mvaccess.github.io/cannabismap/export.geojson'
         },
         'layout': {},
         'paint': {
