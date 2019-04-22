@@ -10,7 +10,7 @@
 <div id='map'></div>
 <script>
 var poly = turf.multiPolygon('https://mvaccess.github.io/cannabismap/schools.geojson');
-var buffered = turf.buffer(poly, 650, {units: 'feet'}); 
+var buffered = turf.buffer(poly, 650, 'feet'); 
 console.log(buffered)
 </script>
 
