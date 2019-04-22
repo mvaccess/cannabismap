@@ -17,8 +17,10 @@
 <div id='map'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5naW5lZXJlbWlseSIsImEiOiJjaWdvcTNqMGkwMDhxdDdrbnhjaW1qOTE0In0.GUfQCFjRMIHLU0YSw98cYw';
-var schools = turf.multiPolygon('https://mvaccess.github.io/cannabismap/export.geojson');
-var buffered = turf.buffer(schools, 650, {units: 'feet'}); 
+
+var poly = turf.multiPolygon('https://mvaccess.github.io/cannabismap/export.geojson');
+var buffered = turf.buffer(poly, 650, {units: 'feet'}); 
+
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/engineeremily/cjt53ct6i49f81fqfsc739bia',
