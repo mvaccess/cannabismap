@@ -26,8 +26,8 @@ const map = new mapboxgl.Map({
   zoom: 13.3
 });
 
-var poly = turf.multiPolygon('https://mvaccess.github.io/cannabismap/test.geojson');
-var buffered = turf.buffer(poly, 650, {units: 'feet'}); 
+var multiPolygon = turf.multiPolygon('https://mvaccess.github.io/cannabismap/test.geojson');
+var buffered = turf.buffer(multiPolygon, 650, {units: 'feet'}); 
 
 map.on('load', function () {
 	
