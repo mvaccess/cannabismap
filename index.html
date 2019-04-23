@@ -19,7 +19,7 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5naW5lZXJlbWlseSIsImEiOiJjaWdvcTNqMGkwMDhxdDdrbnhjaW1qOTE0In0.GUfQCFjRMIHLU0YSw98cYw';
 
 var poly = turf.multiPolygon('https://mvaccess.github.io/cannabismap/schools.geojson');
-var buffered = turf.buffer(poly, 650, 'feet'); 
+var buffered = turf.buffer(poly, 650, {units: 'feet'}); 
 
 const map = new mapboxgl.Map({
   container: 'map',
