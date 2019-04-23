@@ -18,8 +18,40 @@
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5naW5lZXJlbWlseSIsImEiOiJjaWdvcTNqMGkwMDhxdDdrbnhjaW1qOTE0In0.GUfQCFjRMIHLU0YSw98cYw';
 
-// var poly = turf.multiPolygon('https://mvaccess.github.io/cannabismap/test.geojson');
-var buffered = turf.buffer('https://mvaccess.github.io/cannabismap/test.geojson', 650, {units: 'feet'}); 
+//var poly = turf.multiPolygon('https://mvaccess.github.io/cannabismap/test.geojson');
+var poly = {
+    'type': 'Feature',
+    'geometry': {
+      'type': 'Polygon',
+      'coordinates': [[
+            [
+              -122.08488464355469,
+              37.3928002484491
+            ],
+            [
+              -122.08642959594727,
+              37.385980767871416
+            ],
+            [
+              -122.07664489746094,
+              37.38379840307495
+            ],
+            [
+              -122.07286834716795,
+              37.39157278772586
+            ],
+            [
+              -122.08488464355469,
+              37.3928002484491
+            ]]
+			]
+    },
+    'properties': {
+      'name': 'Null Island'
+    }
+  };
+
+var buffered = turf.buffer(poly, 650, {units: 'feet'}); 
 
 const map = new mapboxgl.Map({
   container: 'map',
