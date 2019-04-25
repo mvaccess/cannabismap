@@ -16,12 +16,15 @@
 
 <div id='map'></div>
 <script>
+var person = 650;
+var zone = person;
 function myFunction() {
-  var person = prompt("Please enter the buffer in feet", "650");
+  person = prompt("Please enter the buffer in feet", "650");
     if (isNaN(person) || person < 1 || person > 10000) {
     alert("Input not valid");
   } else {
     alert("Input OK");
+	var zone = person;
   };
 }
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5naW5lZXJlbWlseSIsImEiOiJjaWdvcTNqMGkwMDhxdDdrbnhjaW1qOTE0In0.GUfQCFjRMIHLU0YSw98cYw';
@@ -31,7 +34,6 @@ const map = new mapboxgl.Map({
   center: [-122.066981, 37.392169],
   zoom: 13.3
 });
-var zone = person;
 var multiPolygon = {
   "type": "FeatureCollection",
   "generator": "overpass-ide",
