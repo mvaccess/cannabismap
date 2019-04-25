@@ -17,8 +17,8 @@
 <div id='map'></div>
 <script>
 function myFunction() {
-  var person = prompt("Please enter your name", "Harry Potter");
-    if (isNaN(person) || person < 1 || person > 10) {
+  var person = prompt("Please enter the buffer in feet", "650");
+    if (isNaN(person) || person < 1 || person > 10000) {
     alert("Input not valid");
   } else {
     alert("Input OK");
@@ -31,7 +31,7 @@ const map = new mapboxgl.Map({
   center: [-122.066981, 37.392169],
   zoom: 13.3
 });
-var zone = 650;
+var zone = person;
 var multiPolygon = {
   "type": "FeatureCollection",
   "generator": "overpass-ide",
