@@ -12,13 +12,15 @@
     #map { position:absolute; top:0; bottom:0; width:100%; }
   </style>
 </head>
-<body>
+<body onload="myFunction()">
 
 <div id='map'></div>
 <script>
+function myFunction() {
+  var person = prompt("Please enter your name", "Harry Potter");
+  alert(person);
+}
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5naW5lZXJlbWlseSIsImEiOiJjaWdvcTNqMGkwMDhxdDdrbnhjaW1qOTE0In0.GUfQCFjRMIHLU0YSw98cYw';
-
-
 const map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/engineeremily/cjt53ct6i49f81fqfsc739bia',
