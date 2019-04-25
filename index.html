@@ -25,7 +25,7 @@ const map = new mapboxgl.Map({
   center: [-122.066981, 37.392169],
   zoom: 13.3
 });
-
+var zone = 650;
 var multiPolygon = {
   "type": "FeatureCollection",
   "generator": "overpass-ide",
@@ -1914,7 +1914,7 @@ var multiPolygon = {
     }
   ]
 };
-var buffered = turf.buffer(multiPolygon, 650, {units: 'feet'}); 
+var buffered = turf.buffer(multiPolygon, zone, {units: 'feet'}); 
 
 map.on('load', function () {
 	
@@ -1928,7 +1928,7 @@ map.on('load', function () {
         'layout': {},
         'paint': {
             'fill-color': '#088',
-            'fill-opacity': 0.8
+            'fill-opacity': 0.6
         }
     });
 });

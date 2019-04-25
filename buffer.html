@@ -7,6 +7,7 @@
 </head>
 <body>
 <script>
+var zone = 650;
 var multiPolygon = {
   "type": "FeatureCollection",
   "generator": "overpass-ide",
@@ -1895,7 +1896,7 @@ var multiPolygon = {
     }
   ]
 };
-var buffered = turf.buffer(multiPolygon, 650, {units: 'miles'}); 
+var buffered = turf.buffer(multiPolygon, zone, {units: 'miles'}); 
 console.log(multiPolygon)
 console.log(buffered)
 </script>
