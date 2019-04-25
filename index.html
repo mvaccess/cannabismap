@@ -17,9 +17,9 @@
 <div id='map'></div>
 <script>
 function myFunction() {
-  var person = prompt("Please enter the buffer in feet", "650");
+  var person = prompt("Please enter the buffer distance in feet", "650");
     if (isNaN(person) || person < 1 || person > 10000) {
-    alert("Input not valid");
+    alert("Input not valid. Please refresh the page to try again.");
   } else {
     alert("Input OK");
 	return person;
