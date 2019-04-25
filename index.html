@@ -20,7 +20,7 @@ function myFunction() {
   var person = prompt("Please enter the buffer distance in feet", "650");
     if (isNaN(person) || person < 1 || person > 10000) {
     alert("Input not valid.");
-	reload();
+	document.location.reload();
   } else {
     alert("Input OK");
 	return person;
