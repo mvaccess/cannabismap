@@ -18,7 +18,11 @@
 <script>
 function myFunction() {
   var person = prompt("Please enter your name", "Harry Potter");
-  alert(person);
+    if (isNaN(person) || person < 1 || person > 10) {
+    alert("Input not valid");
+  } else {
+    alert("Input OK");
+  };
 }
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW5naW5lZXJlbWlseSIsImEiOiJjaWdvcTNqMGkwMDhxdDdrbnhjaW1qOTE0In0.GUfQCFjRMIHLU0YSw98cYw';
 const map = new mapboxgl.Map({
