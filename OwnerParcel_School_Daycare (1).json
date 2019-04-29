@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8' />
-  <title>Mountain View Cannabis Buffer Zones</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
-<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-  <style>
-    body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
-  </style>
-</head>
-<body>
-
-<div id='map'></div>
-<script>
-function myFunction() {
-  var person = prompt("Please enter the buffer distance in feet", "650");
-    if (isNaN(person) || person < 1 || person > 10000) {
-    alert("Input not valid.");
-	document.location.reload();
-  } else {
-    alert("Input OK");
-	return person;
-  };
-}
-var zone = myFunction();
-mapboxgl.accessToken = 'pk.eyJ1IjoiZW5naW5lZXJlbWlseSIsImEiOiJjaWdvcTNqMGkwMDhxdDdrbnhjaW1qOTE0In0.GUfQCFjRMIHLU0YSw98cYw';
-const map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/engineeremily/cjt53ct6i49f81fqfsc739bia',
-  center: [-122.066981, 37.392169],
-  zoom: 13.3
-});
-var multiPolygon = {
+{
   "type" : "FeatureCollection",
   "features" : [
     {
@@ -18956,28 +18920,4 @@ var multiPolygon = {
       }
     }
   ]
-};
-var buffered = turf.buffer(multiPolygon, zone, {units: 'feet'}); 
-
-map.on('load', function () {
-	
-    map.addLayer({
-        'id': 'maine',
-        'type': 'fill',
-        'source': {
-            'type': 'geojson',
-            'data': buffered
-        },
-        'layout': {},
-        'paint': {
-            'fill-color': '#088',
-            'fill-opacity': 0.6
-        }
-    });
-});
-// Add zoom and rotation controls to the map.
-map.addControl(new mapboxgl.NavigationControl());
-</script>
-
-</body>
-</html>
+}
